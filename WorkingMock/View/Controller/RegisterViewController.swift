@@ -15,6 +15,9 @@ class RegisterViewController: UIViewController {
     
     var delegate: SendUserDataDelegate?
     
+    var coordinator: MainCoordinator?
+    
+    
     
     typealias CustomView = RegisterScreenView
     let customView = CustomView()

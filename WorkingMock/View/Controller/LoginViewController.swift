@@ -12,12 +12,14 @@ class LoginViewController: UIViewController {
     typealias CustomView = LoginScreenView
     let customView = CustomView()
     
-     var user = User()
+    var coordinator: MainCoordinator?
+    
+    var user = User()
     
     override func loadView() {
         view = customView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -61,9 +63,8 @@ class LoginViewController: UIViewController {
     }
     
     func navigateToHome() {
-       let homeViewController = HomeViewController()
-       self.navigationController?.pushViewController(homeViewController, animated: true)
-   }
+        coordinator?.toHomeViewController()
+    }
     
     @objc func navigateToRegister() {
         let registerViewController = RegisterViewController()
